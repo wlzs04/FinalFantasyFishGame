@@ -21,10 +21,16 @@ public:
 	void InitGameTime();
 
 	//开始计时
+	UFUNCTION(BlueprintCallable)
 	void StartTime();
 
 	//停止计时
+	UFUNCTION(BlueprintCallable)
 	void StopTime();
+
+	//是否计时
+	UFUNCTION(BlueprintCallable)
+	bool IsStartTime();
 
 	//每帧执行一次
 	UFUNCTION(BlueprintCallable)

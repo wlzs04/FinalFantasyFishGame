@@ -19,6 +19,11 @@ void UGameManager::StopTime()
 	startTime = false;
 }
 
+bool UGameManager::IsStartTime()
+{
+	return startTime;
+}
+
 void UGameManager::Tick(float secondTime)
 {
 	if (startTime)

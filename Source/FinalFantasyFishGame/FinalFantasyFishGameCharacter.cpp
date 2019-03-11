@@ -19,7 +19,7 @@ AFinalFantasyFishGameCharacter::AFinalFantasyFishGameCharacter()
 
 	// set our turn rates for input
 	BaseTurnRate = 45.f;
-	BaseLookUpRate = -45.f;
+	BaseLookUpRate = 45.f;
 
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
