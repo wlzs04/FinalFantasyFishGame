@@ -35,7 +35,7 @@ UTimeData* UGameManager::GetRealDuringTime()
 
 UTimeData* UGameManager::GetGameDuringTime()
 {
-	return realTimeData;
+	return gameTimeData;
 }
 
 void UGameManager::SetGameAndRealTimeRate(float gameAndRealTimeRate)

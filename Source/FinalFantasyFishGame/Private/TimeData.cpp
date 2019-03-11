@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TimeData.h"
+#include "Math/UnrealMathUtility.h"
 
 UTimeData::UTimeData()
 {
@@ -39,7 +40,7 @@ float UTimeData::GetAllMinutes()
 
 float UTimeData::GetSeconds()
 {
-	return ((int)gameDuringSecond)/60;
+	return ((int)gameDuringSecond)%60;
 }
 
 float UTimeData::GetAllSeconds()
@@ -55,4 +56,14 @@ float UTimeData::GetMilliseconds()
 float UTimeData::GetAllMilliseconds()
 {
 	return gameDuringSecond*1000;
+}
+
+void UTimeData::SetTime(int hour, int minute, int second)
+{
+	second = FMath::Clamp(second,0,59);
+	gameDuringSecond = second;
+	minute = FMath::Clamp(minute,0, 59);
+	gameDuringSecond += minute * 60;
+	hour = FMath::Max(0, hour);
+	gameDuringSecond += hour * 3600;
 }
