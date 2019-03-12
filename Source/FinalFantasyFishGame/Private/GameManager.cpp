@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "GameManager.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 void UGameManager::InitGameTime()
 {
@@ -51,4 +52,21 @@ void UGameManager::SetGameAndRealTimeRate(float gameAndRealTimeRate)
 float UGameManager::GetGameAndRealTimeRate()
 {
 	return gameAndRealTimeRate;
+}
+
+void UGameManager::LoadUserData()
+{
+	userData = NewObject<UUserData>(this);
+	gameTimeData->SetTime(userData->GetHour(), userData->GetMinute(), userData->GetSecond());
+}
+
+void UGameManager::SaveUserData()
+{
+	userData->Save();
+}
+
+void UGameManager::ExitGame()
+{
+	SaveUserData();
+	UKismetSystemLibrary::QuitGame(this, nullptr, EQuitPreference::Quit,true);
 }

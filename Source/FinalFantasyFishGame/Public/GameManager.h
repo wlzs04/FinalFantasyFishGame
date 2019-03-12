@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "TimeData.h"
+#include "UserData.h"
 #include "GameManager.generated.h"
 
 /**
@@ -52,12 +53,27 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetGameAndRealTimeRate();
 
+	//加载用户数据
+	UFUNCTION(BlueprintCallable)
+	void LoadUserData();
+
+	//保存用户数据
+	UFUNCTION(BlueprintCallable)
+	void SaveUserData();
+
+	//结束游戏
+	UFUNCTION(BlueprintCallable)
+	void ExitGame();
+
 private:
 	UPROPERTY()
 	UTimeData* realTimeData = nullptr;
 
 	UPROPERTY()
 	UTimeData* gameTimeData = nullptr;
+
+	UPROPERTY()
+	UUserData* userData = nullptr;
 
 	bool startTime = false;
 	float gameAndRealTimeRate = 1;
