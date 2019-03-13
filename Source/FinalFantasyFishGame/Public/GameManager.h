@@ -61,6 +61,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SaveUserData();
 
+	//设置是否固定时间
+	UFUNCTION(BlueprintCallable)
+	void SetIsFixedTime(bool isFixedTime);
+
+	//获得是否固定时间
+	UFUNCTION(BlueprintCallable)
+	bool GetIsFixedTime();
+
 	//结束游戏
 	UFUNCTION(BlueprintCallable)
 	void ExitGame();
@@ -77,4 +85,5 @@ private:
 
 	bool startTime = false;
 	float gameAndRealTimeRate = 1;
+	bool isFixedTime = false;//是否固定时间
 };

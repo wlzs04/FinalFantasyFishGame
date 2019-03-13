@@ -58,11 +58,30 @@ void UGameManager::LoadUserData()
 {
 	userData = NewObject<UUserData>(this);
 	gameTimeData->SetTime(userData->GetHour(), userData->GetMinute(), userData->GetSecond());
+	SetIsFixedTime(userData->GetIsFixedTime());
 }
 
 void UGameManager::SaveUserData()
 {
 	userData->Save();
+}
+
+void UGameManager::SetIsFixedTime(bool isFixedTime)
+{
+	this->isFixedTime = isFixedTime;
+	if (isFixedTime)
+	{
+		StopTime();
+	}
+	else
+	{
+		StartTime();
+	}
+}
+
+bool UGameManager::GetIsFixedTime()
+{
+	return isFixedTime;
 }
 
 void UGameManager::ExitGame()

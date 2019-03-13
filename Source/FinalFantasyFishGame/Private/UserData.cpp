@@ -23,10 +23,13 @@ void UUserData::Save()
 	hour = gameDuringTime->GetHours();
 	minute = gameDuringTime->GetMinutes();
 	second = gameDuringTime->GetSeconds();
+	isFixedTime = gameManager->GetIsFixedTime();
 	FString xmlContent = TEXT("<UserData ");
 	xmlContent.Append(TEXT("hour=\"") + FString::FromInt(hour) + TEXT("\" "));
 	xmlContent.Append(TEXT("minute=\"") + FString::FromInt(minute) + TEXT("\" "));
 	xmlContent.Append(TEXT("second=\"") + FString::FromInt(second) + TEXT("\" "));
+	FString isFixedTimeString = (isFixedTime ? TEXT("true") : TEXT("false"));
+	xmlContent.Append(TEXT("isFixedTime=\"") + isFixedTimeString + TEXT("\" "));
 	xmlContent.Append(TEXT(">\n</UserData>"));
 
 	FXmlFile* xmlFile = new FXmlFile(xmlContent,EConstructMethod::ConstructFromBuffer);
@@ -50,6 +53,11 @@ int UUserData::GetSecond()
 	return second;
 }
 
+bool UUserData::GetIsFixedTime()
+{
+	return isFixedTime;
+}
+
 void UUserData::Load()
 {
 	FXmlFile* xmlFile = new FXmlFile(savePath);
@@ -64,11 +72,25 @@ void UUserData::Load()
 	//加载基础属性
 	{
 		FString hourString = rootNode->GetAttribute(TEXT("hour"));
-		hour = FCString::Atoi(*hourString);
+		if (!hourString.IsEmpty())
+		{
+			hour = FCString::Atoi(*hourString);
+		}
 		FString minuteString = rootNode->GetAttribute(TEXT("minute"));
-		minute = FCString::Atoi(*minuteString);
+		if (!minuteString.IsEmpty())
+		{
+			minute = FCString::Atoi(*minuteString);
+		}
 		FString secondString = rootNode->GetAttribute(TEXT("second"));
-		second = FCString::Atoi(*secondString);
+		if (!secondString.IsEmpty())
+		{
+			second = FCString::Atoi(*secondString);
+		}
+		FString isFixedTimeString = rootNode->GetAttribute(TEXT("isFixedTime"));
+		if (!isFixedTimeString.IsEmpty())
+		{
+			isFixedTime = isFixedTimeString.ToBool();
+		}
 	}
 
 	xmlFile->Clear();

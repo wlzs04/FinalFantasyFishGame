@@ -25,6 +25,8 @@ public:
 	int GetMinute();
 
 	int GetSecond();
+
+	bool GetIsFixedTime();
 protected:
 	void Load();
 
@@ -33,7 +35,9 @@ protected:
 	//保存路径
 	FString savePath;
 
-	int hour;
-	int minute;
-	int second;
+	int hour = 6;//时
+	int minute = 0;//分
+	int second = 0;//秒
+
+	bool isFixedTime = false;//是否固定时间
 };
