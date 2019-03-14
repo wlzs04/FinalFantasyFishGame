@@ -2,6 +2,13 @@
 
 #include "GameManager.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Config/ItemRecorder.h"
+
+void UGameManager::InitManager()
+{
+	configManager = NewObject<UConfigManager>(this);
+	configManager->LoadConfigByName(UItemRecorder::StaticClass(),TEXT("Item"));
+}
 
 void UGameManager::InitGameTime()
 {
@@ -88,4 +95,9 @@ void UGameManager::ExitGame()
 {
 	SaveUserData();
 	UKismetSystemLibrary::QuitGame(this, nullptr, EQuitPreference::Quit,true);
+}
+
+UConfigManager * UGameManager::GetConfigManager()
+{
+	return configManager;
 }

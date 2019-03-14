@@ -6,6 +6,7 @@
 #include "Engine/GameInstance.h"
 #include "TimeData.h"
 #include "UserData.h"
+#include "ConfigManager.h"
 #include "GameManager.generated.h"
 
 /**
@@ -17,6 +18,11 @@ class FINALFANTASYFISHGAME_API UGameManager : public UGameInstance
 	GENERATED_BODY()
 
 public:
+
+	//初始化管理类
+	UFUNCTION(BlueprintCallable)
+	void InitManager();
+
 	//初始化游戏时间
 	UFUNCTION(BlueprintCallable)
 	void InitGameTime();
@@ -73,6 +79,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ExitGame();
 
+	//获得配置管理器
+	UFUNCTION(BlueprintCallable)
+	UConfigManager* GetConfigManager();
+
 private:
 	UPROPERTY()
 	UTimeData* realTimeData = nullptr;
@@ -82,6 +92,9 @@ private:
 
 	UPROPERTY()
 	UUserData* userData = nullptr;
+
+	UPROPERTY()
+	UConfigManager* configManager = nullptr;
 
 	bool startTime = false;
 	float gameAndRealTimeRate = 1;

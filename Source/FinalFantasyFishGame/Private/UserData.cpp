@@ -4,8 +4,6 @@
 #include "GameManager.h"
 
 #include "Paths.h"
-#include "Runtime/XmlParser/Public/XmlParser.h"
-#include "Runtime/XmlParser/Public/FastXml.h" 
 #include "XmlParser/Public/XmlFile.h"
 #include "LogMacros.h"
 #include "Engine/World.h"
@@ -63,7 +61,7 @@ void UUserData::Load()
 	FXmlFile* xmlFile = new FXmlFile(savePath);
 	if (!xmlFile->IsValid())
 	{
-		UE_LOG(LogLoad, Error, TEXT("Save文件加载失败：%s"), *savePath);
+		UE_LOG(LogLoad, Error, TEXT("存档文件加载失败：%s"), *savePath);
 		return;
 	}
 
