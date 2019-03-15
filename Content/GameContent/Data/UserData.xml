@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<UserData hour="5" minute="35" second="24" isFixedTime="true" />
+<UserData hour="5" minute="35" second="24" isFixedTime="true" >
+	<ItemMap>
+		<Item id="1" number="4" />
+		<Item id="3" number="6" />
+		<Item id="5" number="2" />
+		<Item id="9" number="1" />
+		<Item id="11" number="15" />
+	</ItemMap>
+</UserData>

@@ -9,15 +9,22 @@ void UItemRecorder::LoadRecorder(FXmlNode* xmlNode)
 	URecorderBase::LoadRecorder(xmlNode);
 
 	name = xmlNode->GetAttribute(TEXT("name"));
+	imagePath = xmlNode->GetAttribute(TEXT("imagePath"));
 	descript = xmlNode->GetAttribute(TEXT("descript"));
 
 	valueMap.Add("name", name);
+	valueMap.Add("imagePath", imagePath);
 	valueMap.Add("descript", descript);
 }
 
 FString UItemRecorder::GetName()
 {
 	return name;
+}
+
+FString UItemRecorder::GetImagePath()
+{
+	return imagePath;
 }
 
 FString UItemRecorder::GetDescript()

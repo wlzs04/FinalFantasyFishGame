@@ -27,6 +27,10 @@ public:
 	int GetSecond();
 
 	bool GetIsFixedTime();
+
+	//获得物品map
+	UFUNCTION(BlueprintCallable)
+	TMap<int, int> GetItemMap();
 protected:
 	void Load();
 
@@ -40,4 +44,6 @@ protected:
 	int second = 0;//秒
 
 	bool isFixedTime = false;//是否固定时间
+
+	TMap<int, int> itemMap;
 };

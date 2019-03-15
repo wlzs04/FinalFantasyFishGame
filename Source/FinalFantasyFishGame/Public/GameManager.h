@@ -9,6 +9,8 @@
 #include "ConfigManager.h"
 #include "GameManager.generated.h"
 
+class UTexture2D;
+
 /**
  * 游戏管理类
  */
@@ -18,14 +20,9 @@ class FINALFANTASYFISHGAME_API UGameManager : public UGameInstance
 	GENERATED_BODY()
 
 public:
-
-	//初始化管理类
+	//初始化所有内容
 	UFUNCTION(BlueprintCallable)
-	void InitManager();
-
-	//初始化游戏时间
-	UFUNCTION(BlueprintCallable)
-	void InitGameTime();
+	void InitAll();
 
 	//开始计时
 	UFUNCTION(BlueprintCallable)
@@ -67,6 +64,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SaveUserData();
 
+	//获得用户数据
+	UFUNCTION(BlueprintCallable)
+	UUserData* GetUserData();
+
 	//设置是否固定时间
 	UFUNCTION(BlueprintCallable)
 	void SetIsFixedTime(bool isFixedTime);
@@ -83,7 +84,17 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UConfigManager* GetConfigManager();
 
+	UFUNCTION(BlueprintCallable)
+	UTexture2D* LoadTexture2D(FString path, bool& IsValid, int32& OutWidth, int32& OutHeight);
+
 private:
+
+	//初始化管理类
+	void InitManager();
+
+	//初始化游戏时间
+	void InitGameTime();
+
 	UPROPERTY()
 	UTimeData* realTimeData = nullptr;
 

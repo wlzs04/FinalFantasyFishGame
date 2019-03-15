@@ -23,12 +23,26 @@ void UUserData::Save()
 	second = gameDuringTime->GetSeconds();
 	isFixedTime = gameManager->GetIsFixedTime();
 	FString xmlContent = TEXT("<UserData ");
+	//start 添加基础信息
 	xmlContent.Append(TEXT("hour=\"") + FString::FromInt(hour) + TEXT("\" "));
 	xmlContent.Append(TEXT("minute=\"") + FString::FromInt(minute) + TEXT("\" "));
 	xmlContent.Append(TEXT("second=\"") + FString::FromInt(second) + TEXT("\" "));
 	FString isFixedTimeString = (isFixedTime ? TEXT("true") : TEXT("false"));
 	xmlContent.Append(TEXT("isFixedTime=\"") + isFixedTimeString + TEXT("\" "));
-	xmlContent.Append(TEXT(">\n</UserData>"));
+	xmlContent.Append(TEXT(">\n"));
+	//end 添加基础信息
+	//start 添加物品map
+	xmlContent.Append(TEXT("\t<ItemMap>\n"));
+	for(auto var : itemMap)
+	{
+		xmlContent.Append(TEXT("\t\t<Item "));
+		xmlContent.Append(TEXT("id=\"") + FString::FromInt(var.Key) + TEXT("\" "));
+		xmlContent.Append(TEXT("number=\"") + FString::FromInt(var.Value) + TEXT("\" "));
+		xmlContent.Append(TEXT("/>\n"));
+	}
+	xmlContent.Append(TEXT("\t</ItemMap>\n"));
+	//end 添加物品map
+	xmlContent.Append(TEXT("</UserData>"));
 
 	FXmlFile* xmlFile = new FXmlFile(xmlContent,EConstructMethod::ConstructFromBuffer);
 	xmlFile->Save(savePath);
@@ -54,6 +68,11 @@ int UUserData::GetSecond()
 bool UUserData::GetIsFixedTime()
 {
 	return isFixedTime;
+}
+
+TMap<int, int> UUserData::GetItemMap()
+{
+	return itemMap;
 }
 
 void UUserData::Load()
@@ -88,6 +107,30 @@ void UUserData::Load()
 		if (!isFixedTimeString.IsEmpty())
 		{
 			isFixedTime = isFixedTimeString.ToBool();
+		}
+
+		for (FXmlNode* xmlNode : rootNode->GetChildrenNodes())
+		{
+			//加载物品
+			if (xmlNode->GetTag() == TEXT("ItemMap"))
+			{
+				for (FXmlNode* itemNode : xmlNode->GetChildrenNodes())
+				{
+					int id = 0;
+					int number = 0;
+					FString idString = itemNode->GetAttribute(TEXT("id"));
+					if (!idString.IsEmpty())
+					{
+						id = FCString::Atoi(*idString);
+					}
+					FString numberString = itemNode->GetAttribute(TEXT("number"));
+					if (!numberString.IsEmpty())
+					{
+						number = FCString::Atoi(*numberString);
+					}
+					itemMap.Add(id,number);
+				}
+			}
 		}
 	}
 
