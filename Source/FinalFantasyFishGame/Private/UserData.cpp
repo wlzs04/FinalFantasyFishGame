@@ -22,6 +22,7 @@ void UUserData::Save()
 	minute = gameDuringTime->GetMinutes();
 	second = gameDuringTime->GetSeconds();
 	isFixedTime = gameManager->GetIsFixedTime();
+	gameAndRealTimeRate = gameManager->GetGameAndRealTimeRate();
 	FString xmlContent = TEXT("<UserData ");
 	//start 添加基础信息
 	xmlContent.Append(TEXT("hour=\"") + FString::FromInt(hour) + TEXT("\" "));
@@ -29,6 +30,7 @@ void UUserData::Save()
 	xmlContent.Append(TEXT("second=\"") + FString::FromInt(second) + TEXT("\" "));
 	FString isFixedTimeString = (isFixedTime ? TEXT("true") : TEXT("false"));
 	xmlContent.Append(TEXT("isFixedTime=\"") + isFixedTimeString + TEXT("\" "));
+	xmlContent.Append(TEXT("gameAndRealTimeRate=\"") + FString::SanitizeFloat(gameAndRealTimeRate) + TEXT("\" "));
 	xmlContent.Append(TEXT(">\n"));
 	//end 添加基础信息
 	//start 添加物品map
@@ -70,6 +72,11 @@ bool UUserData::GetIsFixedTime()
 	return isFixedTime;
 }
 
+float UUserData::GetGameAndRealTimeRate()
+{
+	return gameAndRealTimeRate;
+}
+
 TMap<int, int> UUserData::GetItemMap()
 {
 	return itemMap;
@@ -107,6 +114,11 @@ void UUserData::Load()
 		if (!isFixedTimeString.IsEmpty())
 		{
 			isFixedTime = isFixedTimeString.ToBool();
+		}
+		FString gameAndRealTimeRateString = rootNode->GetAttribute(TEXT("gameAndRealTimeRate"));
+		if (!gameAndRealTimeRateString.IsEmpty())
+		{
+			gameAndRealTimeRate = FCString::Atof(*gameAndRealTimeRateString);
 		}
 
 		for (FXmlNode* xmlNode : rootNode->GetChildrenNodes())

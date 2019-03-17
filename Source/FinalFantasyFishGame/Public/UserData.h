@@ -28,6 +28,8 @@ public:
 
 	bool GetIsFixedTime();
 
+	float GetGameAndRealTimeRate();
+
 	//获得物品map
 	UFUNCTION(BlueprintCallable)
 	TMap<int, int> GetItemMap();
@@ -44,6 +46,8 @@ protected:
 	int second = 0;//秒
 
 	bool isFixedTime = false;//是否固定时间
+
+	float gameAndRealTimeRate = 1;
 
 	TMap<int, int> itemMap;
 };

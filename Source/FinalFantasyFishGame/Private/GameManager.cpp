@@ -79,6 +79,7 @@ void UGameManager::LoadUserData()
 	userData = NewObject<UUserData>(this);
 	gameTimeData->SetTime(userData->GetHour(), userData->GetMinute(), userData->GetSecond());
 	SetIsFixedTime(userData->GetIsFixedTime());
+	SetGameAndRealTimeRate(userData->GetGameAndRealTimeRate());
 }
 
 void UGameManager::SaveUserData()
