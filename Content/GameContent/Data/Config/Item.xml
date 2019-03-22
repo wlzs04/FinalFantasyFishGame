@@ -1,15 +1,15 @@
 <Item>
-	<Recorder id="1" name="物品1" imagePath="item.jpg" descript="物品描述1"/>
-	<Recorder id="2" name="物品2" imagePath="item.jpg" descript="物品描述2"/>
-	<Recorder id="3" name="物品3" imagePath="item.jpg" descript="物品描述3"/>
-	<Recorder id="4" name="物品4" imagePath="item.jpg" descript="物品描述4"/>
-	<Recorder id="5" name="物品5" imagePath="item.jpg" descript="物品描述5"/>
-	<Recorder id="6" name="物品6" imagePath="item.jpg" descript="物品描述6"/>
-	<Recorder id="7" name="物品7" imagePath="item.jpg" descript="物品描述7"/>
-	<Recorder id="8" name="物品8" imagePath="item.jpg" descript="物品描述8"/>
-	<Recorder id="9" name="物品9" imagePath="item.jpg" descript="物品描述9"/>
-	<Recorder id="10" name="物品10" imagePath="item.jpg" descript="物品描述10"/>
-	<Recorder id="11" name="物品11" imagePath="item.jpg" descript="物品描述11"/>
-	<Recorder id="12" name="物品12" imagePath="item.jpg" descript="物品描述12"/>
-	<Recorder id="13" name="物品13" imagePath="item.jpg" descript="物品描述13"/>
+	<Recorder id="1" name="独竿" imagePath="dugan.jpg" descript="采用竹子制成，强度高、弹性好，鱼儿不易脱钩，但携带不方便。"/>
+	<Recorder id="2" name="多节活动竿" imagePath="duojiegan.jpg" descript="携带方便、使用灵活、易于存放。"/>
+	<Recorder id="3" name="手竿" imagePath="shougan.jpg" descript="不装绕线轮的钓竿，多用于淡水垂钓。"/>
+	<Recorder id="4" name="海竿" imagePath="haigan.jpg" descript="又叫投竿或抛竿，当用力甩投时，能把饵钩抛到较远的水域。甩得远、诱鱼力强、大鱼难以脱逃、不怕风浪干扰、比较省力、灵活性较大，但咬钩的信息不够灵敏，成本较大。"/>
+	<Recorder id="5" name="普通鱼饵" imagePath="putongyuer.jpg" descript="蚯蚓一条。"/>
+	<Recorder id="6" name="塑料鱼饵" imagePath="suoliaoyuer.jpg" descript="像饵不可食，可重复使用。"/>
+	<Recorder id="7" name="鲫鱼" imagePath="jiyu.jpg" descript="主要是以植物为食的杂食性鱼，喜群集而行，择食而居。肉质细嫩，营养价值很高。"/>
+	<Recorder id="8" name="鲤鱼" imagePath="liyu.jpg" descript="俗称鲤拐子、毛子等，隶属于鲤科。身体侧扁而腹部圆，背鳍基部较长，背鳍和臀鳍均有一根粗壮带锯齿的硬棘。体侧金黄色，尾鳍下叶橙红色。鲤鱼平时多栖息于江河、湖泊、水库、池沼的水草丛生的水体底层，以食底栖动物为主。"/>
+	<Recorder id="9" name="草鱼" imagePath="caoyu.jpg" descript="鲤科，体延长，亚圆筒形，体长大1m余。体青黄色。头宽平，无须。栖息水的中下层，以水草为食。生长快，最大个体达30kg左右。为中国主要淡水鱼类养殖对象。肉味美，鱼胆有毒 。"/>
+	<Recorder id="10" name="花鲢" imagePath="hualian.jpg" descript="花鲢也称鳙鱼、胖头鱼、大头鱼, 是深受消费者欢迎的鱼类品种, 特别是大规格花鲢, 具有很高的经济价值。花鲢属于滤食性鱼类, 主要以轮虫、枝角类、桡足类等浮游动物为主要食物。"/>
+	<Recorder id="11" name="甲鱼" imagePath="jiayu.jpg" descript="甲鱼是鳖的俗称，也叫团鱼、水鱼、是卵生两栖爬行动物，是龟鳖目鳖科软壳水生龟的统称。共有20多种。中国现存主要有中华鳖、山瑞鳖、斑鳖、鼋，其中以中华鳖最为常见。"/>
+	<Recorder id="12" name="木头" imagePath="mutou.jpg" descript="一块木头而已。"/>
+	<Recorder id="13" name="破木箱" imagePath="pomuxiang.jpg" descript="打开看看，说不定里面有惊喜！"/>
 </Item>
