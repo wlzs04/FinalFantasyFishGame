@@ -1,13 +1,13 @@
 <FishEquip>
-	<Recorder id="1" idRod="true" itemId="1" />
-	<Recorder id="2" idRod="true" itemId="2"/>
-	<Recorder id="3" idRod="true" itemId="3"/>
-	<Recorder id="4" idRod="true" itemId="4"/>
-	<Recorder id="5" idBait="true" itemId="5"/>
-	<Recorder id="6" idBait="true" itemId="6"/>
-	<Recorder id="7" idBait="true" itemId="7"/>
-	<Recorder id="8" idBait="true" itemId="8"/>
-	<Recorder id="9" idBait="true" itemId="9"/>
-	<Recorder id="10" idBait="true" itemId="10"/>
-	<Recorder id="11" idBait="true" itemId="11"/>
+	<Recorder id="1" fishEquipType="Rod" itemId="1"/>
+	<Recorder id="2" fishEquipType="Rod" itemId="2"/>
+	<Recorder id="3" fishEquipType="Rod" itemId="3"/>
+	<Recorder id="4" fishEquipType="Rod" itemId="4"/>
+	<Recorder id="5" fishEquipType="Bait" itemId="5"/>
+	<Recorder id="6" fishEquipType="Bait" itemId="6"/>
+	<Recorder id="7" fishEquipType="Bait" itemId="7"/>
+	<Recorder id="8" fishEquipType="Bait" itemId="8"/>
+	<Recorder id="9" fishEquipType="Bait" itemId="9"/>
+	<Recorder id="10" fishEquipType="Bait" itemId="10"/>
+	<Recorder id="11" fishEquipType="Bait" itemId="11"/>
 </FishEquip>

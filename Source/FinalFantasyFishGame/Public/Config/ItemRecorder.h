@@ -10,12 +10,14 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class FINALFANTASYFISHGAME_API UItemRecorder : public URecorderBase
 {
 	GENERATED_BODY()
 public:
 	void LoadRecorder(FXmlNode* xmlNode) override;
+
+	FString GetRecordName() override;
 
 	//获得名称
 	UFUNCTION(BlueprintCallable)

@@ -11,10 +11,11 @@ void UItemRecorder::LoadRecorder(FXmlNode* xmlNode)
 	name = xmlNode->GetAttribute(TEXT("name"));
 	imagePath = xmlNode->GetAttribute(TEXT("imagePath"));
 	descript = xmlNode->GetAttribute(TEXT("descript"));
+}
 
-	valueMap.Add("name", name);
-	valueMap.Add("imagePath", imagePath);
-	valueMap.Add("descript", descript);
+FString UItemRecorder::GetRecordName()
+{
+	return FString(TEXT("Item"));
 }
 
 FString UItemRecorder::GetName()

@@ -17,11 +17,11 @@ class FINALFANTASYFISHGAME_API UConfigManager : public UObject
 public:
 	//获得指定名称的配置
 	UFUNCTION(BlueprintCallable)
-	TMap<int, URecorderBase*> GetConfigByName(UClass* recorderClass, FString configName);
+	TMap<int, URecorderBase*> GetConfigByName(UClass* recorderClass);
 
 	//加载指定名称的配置
 	UFUNCTION(BlueprintCallable)
-	void LoadConfigByName(UClass* recorderClass, FString configName);
+	void LoadConfigByName(UClass* recorderClass);
 
 private:
 	TMap<FString, TMap<int,URecorderBase*>*> configMap;

@@ -16,8 +16,9 @@ class FINALFANTASYFISHGAME_API URecorderBase : public UObject
 {
 	GENERATED_BODY()
 public:
-
 	virtual void LoadRecorder(FXmlNode* xmlNode);
+
+	virtual FString GetRecordName();
 
 	//获得Id
 	UFUNCTION(BlueprintCallable)

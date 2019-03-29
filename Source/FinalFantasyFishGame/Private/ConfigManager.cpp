@@ -9,11 +9,14 @@
 #include "Paths.h"
 #include "UObjectGlobals.h"
 
-TMap<int, URecorderBase*> UConfigManager::GetConfigByName(UClass* recorderClass,FString configName)
+TMap<int, URecorderBase*> UConfigManager::GetConfigByName(UClass* recorderClass)
 {
+	FString configName = recorderClass->GetName();
+	configName = configName.Left(configName.Len()-8);
+
 	if (!configMap.Contains(configName))
 	{
-		LoadConfigByName(recorderClass, configName);
+		LoadConfigByName(recorderClass);
 	}
 	if (!configMap.Contains(configName))
 	{
@@ -23,8 +26,11 @@ TMap<int, URecorderBase*> UConfigManager::GetConfigByName(UClass* recorderClass,
 	return *configMap[configName];
 }
 
-void UConfigManager::LoadConfigByName(UClass* recorderClass,FString configName)
+void UConfigManager::LoadConfigByName(UClass* recorderClass)
 {
+	FString configName = recorderClass->GetName();
+	configName = configName.Left(configName.Len() - 8);
+
 	if (configMap.Contains(configName))
 	{
 		return;
