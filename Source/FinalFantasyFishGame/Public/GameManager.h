@@ -84,8 +84,16 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UConfigManager* GetConfigManager();
 
+	//加载本地图片
 	UFUNCTION(BlueprintCallable)
 	UTexture2D* LoadTexture2D(FString path, bool& IsValid, int32& OutWidth, int32& OutHeight);
+
+	//执行指令
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
+	void ExecuteAction_BPEvent(const FString& actionString);
+
+	/*UFUNCTION(BlueprintImplementableEvent, meta = (FriendlyName = "Player Health ~ Player Is Healthy Tick"))
+	void PlayerIsHealthyTick(float CurrentHealth);*/
 
 private:
 

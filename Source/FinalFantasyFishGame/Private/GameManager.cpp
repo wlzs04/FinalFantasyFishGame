@@ -135,7 +135,7 @@ UTexture2D* UGameManager::LoadTexture2D(FString path, bool& IsValid, int32& OutW
 	{
 		return nullptr;
 	}
-	IImageWrapperPtr ImageWrapper ;
+	TSharedPtr<IImageWrapper> ImageWrapper ;
 	IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
 	if (path.EndsWith(".png"))
 	{
