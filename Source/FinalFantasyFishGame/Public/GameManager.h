@@ -92,9 +92,6 @@ public:
 	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
 	void ExecuteAction_BPEvent(const FString& actionString);
 
-	/*UFUNCTION(BlueprintImplementableEvent, meta = (FriendlyName = "Player Health ~ Player Is Healthy Tick"))
-	void PlayerIsHealthyTick(float CurrentHealth);*/
-
 private:
 
 	//初始化管理类

@@ -11,7 +11,6 @@
 UUserData::UUserData() :UObject()
 {
 	savePath = FPaths::ProjectContentDir() + TEXT("GameContent/Data/UserData.xml");
-	Load();
 }
 
 void UUserData::Save()

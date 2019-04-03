@@ -18,6 +18,8 @@ class FINALFANTASYFISHGAME_API UUserData : public UObject
 public:
 	UUserData();
 
+	void Load();
+
 	void Save();
 
 	int GetHour();
@@ -34,8 +36,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	TMap<int, int> GetItemMap();
 protected:
-	void Load();
-
 	UGameManager* gameManager = nullptr;
 
 	//保存路径

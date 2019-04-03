@@ -64,9 +64,9 @@ UTimeData* UGameManager::GetGameDuringTime()
 	return gameTimeData;
 }
 
-void UGameManager::SetGameAndRealTimeRate(float gameAndRealTimeRate)
+void UGameManager::SetGameAndRealTimeRate(float newGameAndRealTimeRate)
 {
-	this->gameAndRealTimeRate = gameAndRealTimeRate;
+	gameAndRealTimeRate = newGameAndRealTimeRate;
 }
 
 float UGameManager::GetGameAndRealTimeRate()
@@ -77,6 +77,7 @@ float UGameManager::GetGameAndRealTimeRate()
 void UGameManager::LoadUserData()
 {
 	userData = NewObject<UUserData>(this);
+	userData->Load();
 	gameTimeData->SetTime(userData->GetHour(), userData->GetMinute(), userData->GetSecond());
 	SetIsFixedTime(userData->GetIsFixedTime());
 	SetGameAndRealTimeRate(userData->GetGameAndRealTimeRate());
@@ -92,9 +93,9 @@ UUserData* UGameManager::GetUserData()
 	return userData;
 }
 
-void UGameManager::SetIsFixedTime(bool isFixedTime)
+void UGameManager::SetIsFixedTime(bool newIsFixedTime)
 {
-	this->isFixedTime = isFixedTime;
+	isFixedTime = newIsFixedTime;
 	if (isFixedTime)
 	{
 		StopTime();
