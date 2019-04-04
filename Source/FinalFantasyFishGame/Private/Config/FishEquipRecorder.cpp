@@ -19,7 +19,7 @@ void UFishEquipRecorder::LoadRecorder(FXmlNode* xmlNode)
 
 FString UFishEquipRecorder::GetRecordName()
 {
-	return FString(TEXT("FishEquip"));
+	return TEXT("FishEquip");
 }
 
 FishEquipType UFishEquipRecorder::GetFishEquipType()

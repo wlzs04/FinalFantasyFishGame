@@ -1,7 +1,32 @@
 <Fish>
-	<Recorder id="1" itemId="7" radarType="1"/>
-	<Recorder id="2" itemId="8" radarType="1"/>
-	<Recorder id="3" itemId="9" radarType="1"/>
-	<Recorder id="4" itemId="10" radarType="2"/>
-	<Recorder id="5" itemId="11" radarType="3"/>
+	<Recorder id="1" itemId="7" radarIcon="1" difficulty="0.2">
+		<BaitMap>
+			<Bait id="5" attactChance="0.6"/>
+			<Bait id="6" attactChance="0.4"/>
+		</BaitMap>
+	</Recorder>
+	<Recorder id="2" itemId="8" radarIcon="1" difficulty="0.2">
+		<BaitMap>
+			<Bait id="5" attactChance="0.6"/>
+			<Bait id="6" attactChance="0.4"/>
+		</BaitMap>
+	</Recorder>
+	<Recorder id="3" itemId="9" radarIcon="1" difficulty="0.4">
+		<BaitMap>
+			<Bait id="5" attactChance="0.6"/>
+			<Bait id="6" attactChance="0.4"/>
+		</BaitMap>
+	</Recorder>
+	<Recorder id="4" itemId="10" radarIcon="2" difficulty="0.6">
+		<BaitMap>
+			<Bait id="5" attactChance="0.6"/>
+		</BaitMap>
+	</Recorder>
+	<Recorder id="5" itemId="11" radarIcon="3" difficulty="0.8">
+		<BaitMap>
+			<Bait id="5" attactChance="0.3"/>
+			<Bait id="6" attactChance="0.2"/>
+			<Bait id="8" attactChance="0.9"/>
+		</BaitMap>
+	</Recorder>
 </Fish>

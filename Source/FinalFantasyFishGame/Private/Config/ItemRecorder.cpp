@@ -15,7 +15,7 @@ void UItemRecorder::LoadRecorder(FXmlNode* xmlNode)
 
 FString UItemRecorder::GetRecordName()
 {
-	return FString(TEXT("Item"));
+	return TEXT("Item");
 }
 
 FString UItemRecorder::GetName()
